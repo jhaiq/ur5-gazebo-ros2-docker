@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # UR5 Gazebo Simulation
+  gazebo:
+    build:
+      context: .
+      dockerfile: ur5_gazebo_ros2/docker/Dockerfile
+    image: ur5-gazebo-ros2:jazzy
+    container_name: ur5_gazebo
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+    network_mode: host
+    ipc: host
+    pid: host
+    privileged: true
+    stdin_open: true
+    tty: true
+    command: ros2 launch ur5_gazebo gazebo.launch.py
+
+  # RViz2 Visualization
+  rviz:
+    image: ur5-gazebo-ros2:jazzy
+    container_name: ur5_rviz
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+    network_mode: host
+    ipc: host
+    depends_on:
+      - gazebo
+    command: rviz2 -d /root/ur5_ws/src/ur5_gazebo_ros2/ur5_bringup/config/ur5.rviz
+
+  # MoveIt2
+  moveit:
+    image: ur5-gazebo-ros2:jazzy
+    container_name: ur5_moveit
+    environment:
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+    network_mode: host
+    ipc: host
+    depends_on:
+      - gazebo
+    command: ros2 launch ur5_moveit_config moveit.launch.py
