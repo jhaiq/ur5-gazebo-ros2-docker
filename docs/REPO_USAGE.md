@@ -26,18 +26,32 @@
 - 不启用 Issues 功能
 - 不运行 autonomous dispatcher
 
+**典型内容**:
+- Agent 技能代码
+- 测试脚本
+- 开发文档
+
 ### GitHub: ur5-gazebo-ros2-docker
 
-**用途**: 正式项目开发 (UR5 机械臂 + Gazebo + ROS2 + Docker)
+**用途**: 正式项目开发
 
 **特点**:
 - 启用 Issues 追踪
 - autonomous dispatcher 每 5 分钟监控
 - 自动化开发流程
+- 国际协作
+
+**典型内容**:
+- UR5 机械臂项目
+- Gazebo 仿真
+- ROS2 配置
+- Docker 环境
 
 ---
 
 ## 🔧 Git 远程配置
+
+本地仓库当前配置：
 
 ```bash
 # GitHub (项目开发 - 主要)
@@ -47,9 +61,9 @@ origin  git@github.com:jhaiq/ur5-gazebo-ros2-docker.git
 gitee   git@gitee.com:jhaiq/dev-team-agents.git
 ```
 
-### ⚠️ 重要：两个仓库是独立的
+### ⚠️ 重要：不要混用
 
-**不要互相推送**：
+**两个仓库是独立的**，不要互相推送：
 
 ```bash
 # ✅ 正确：推送到 GitHub 项目仓库
@@ -64,14 +78,14 @@ git push gitee main
 
 ---
 
-## 📁 建议的工作目录
+## 📁 本地工作目录
 
 | 目录 | 用途 | 对应远程 |
 |------|------|----------|
-| `/repos/ur5-gazebo-ros2-docker` | 当前工作目录 (GitHub 项目) | `origin` |
-| `/repos/dev-team-agents` | (可选) Agent 开发目录 | `gitee` |
+| `/repos/ur5-gazebo-ros2-docker` | 当前工作目录 | `origin` (GitHub) |
+| `/repos/dev-team-agents` | (可选) Agent 开发目录 | `gitee` (Gitee) |
 
-**为 Gitee 创建独立工作目录**:
+**建议**: 为 Gitee 仓库创建独立的工作目录：
 
 ```bash
 cd /home/node/.openclaw/workspace/repos
@@ -83,7 +97,7 @@ cd dev-team-agents
 
 ## 🚀 Dispatcher 配置
 
-**仅监控 GitHub 仓库** (`ur5-gazebo-ros2-docker`):
+**仅监控 GitHub 仓库**:
 
 ```bash
 # Cron 任务
@@ -93,7 +107,7 @@ Schedule: */5 * * * *
 仓库：jhaiq/ur5-gazebo-ros2-docker
 ```
 
-**Gitee 仓库 (`dev-team-agents`)** 不受监控，纯手动开发。
+**Gitee 仓库不受监控**，纯手动开发。
 
 ---
 
@@ -108,7 +122,7 @@ Schedule: */5 * * * *
 
 ## 💡 使用场景
 
-### 场景 1: 项目开发 (GitHub)
+### 场景 1: 项目开发
 
 ```bash
 cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
@@ -120,7 +134,7 @@ git push origin main
 # → Dispatcher 监控 Issues
 ```
 
-### 场景 2: Agent 技能开发 (Gitee)
+### 场景 2: Agent 技能开发
 
 ```bash
 cd /home/node/.openclaw/workspace/repos/dev-team-agents
@@ -130,6 +144,17 @@ git commit -m "feat: 添加新技能"
 git push gitee main
 # → 纯手动开发，无自动化
 ```
+
+---
+
+## 📝 配置历史
+
+| 日期 | 事件 |
+|------|------|
+| 2026-04-17 16:10 | 创建 Gitee 仓库 `dev-team-agents` (AI Agents 开发) |
+| 2026-04-17 17:03 | GitHub 仓库重命名为 `ur5-gazebo-ros2-docker` (项目开发) |
+| 2026-04-17 17:25 | 修复 Gitee 远程配置 |
+| 2026-04-17 17:35 | 明确双仓库用途区分 |
 
 ---
 
@@ -146,17 +171,6 @@ git remote -v
 # origin  git@github.com:jhaiq/ur5-gazebo-ros2-docker.git (fetch)
 # origin  git@github.com:jhaiq/ur5-gazebo-ros2-docker.git (push)
 ```
-
----
-
-## 📝 配置历史
-
-| 日期 | 事件 |
-|------|------|
-| 2026-04-17 16:10 | 创建 Gitee 仓库 `dev-team-agents` (AI Agents 开发) |
-| 2026-04-17 17:03 | GitHub 仓库重命名为 `ur5-gazebo-ros2-docker` (项目开发) |
-| 2026-04-17 17:25 | 修复 Gitee 远程配置 |
-| 2026-04-17 17:35 | 明确双仓库用途区分 |
 
 ---
 
