@@ -1,7 +1,7 @@
 # GitHub Labels 配置完成报告
 
 > 配置日期：2026-04-17  
-> 目标仓库：https://github.com/jhaiq/dev-team-agents
+> 目标仓库：https://github.com/jhaiq/ur5-gazebo-ros2-docker
 
 ---
 
@@ -83,11 +83,11 @@ jhaiq (GitHub User ID: 25874769)
 ~/.openclaw/workspace/.agents/skills/autonomous-dispatcher/scripts/autonomous.conf
 
 # 关键配置
-PROJECT_ID="dev-team-agents"
-REPO="jhaiq/dev-team-agents"
+PROJECT_ID="ur5-gazebo-ros2-docker"
+REPO="jhaiq/ur5-gazebo-ros2-docker"
 REPO_OWNER="jhaiq"
-REPO_NAME="dev-team-agents"
-PROJECT_DIR="/home/node/.openclaw/workspace/repos/dev-team-agents"
+REPO_NAME="ur5-gazebo-ros2-docker"
+PROJECT_DIR="/home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker"
 GH_AUTH_MODE="token"
 GH_TOKEN_FILE="$HOME/.github_token"
 ```
@@ -99,7 +99,7 @@ GH_TOKEN_FILE="$HOME/.github_token"
 ### 1. 创建 Issue
 
 在 GitHub 仓库创建 Issue：
-https://github.com/jhaiq/dev-team-agents/issues/new
+https://github.com/jhaiq/ur5-gazebo-ros2-docker/issues/new
 
 ### 2. 添加 autonomous Label
 
@@ -163,7 +163,7 @@ stateDiagram-v2
 crontab -e
 
 # 添加（每 5 分钟执行）
-*/5 * * * * cd /home/node/.openclaw/workspace/repos/dev-team-agents && \
+*/5 * * * * cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker && \
   GITHUB_TOKEN=$(cat ~/.github_token) && \
   ~/.openclaw/workspace/.agents/skills/autonomous-dispatcher/scripts/dispatch-local.sh
 ```
@@ -182,8 +182,8 @@ crontab -e
 
 | 资源 | 链接 |
 |------|------|
-| GitHub 仓库 | https://github.com/jhaiq/dev-team-agents |
-| Gitee 仓库 | https://gitee.com/jhaiq/dev-team-agents |
+| GitHub 仓库 | https://github.com/jhaiq/ur5-gazebo-ros2-docker |
+| Gitee 仓库 | https://gitee.com/jhaiq/ur5-gazebo-ros2-docker |
 | autonomous-dev-team | https://github.com/zxkane/autonomous-dev-team |
 | GitHub CLI | https://cli.github.com/ |
 

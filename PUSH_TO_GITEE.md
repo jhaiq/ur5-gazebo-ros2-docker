@@ -23,7 +23,7 @@ SSH 用户：jhaiq
 
 1. **访问**: https://gitee.com/new
 2. **填写**:
-   - 仓库名：`dev-team-agents`
+   - 仓库名：`ur5-gazebo-ros2-docker`
    - 描述：`AI 软件开发团队部署与分析`
    - 许可证：`MIT`
    - ⚠️ **不要勾选**「使用 Readme 初始化仓库」
@@ -32,13 +32,13 @@ SSH 用户：jhaiq
 #### 步骤 2: 推送代码
 
 ```bash
-cd /home/node/.openclaw/workspace/repos/dev-team-agents
+cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 git push -u origin main
 ```
 
 **完成！** 🎉
 
-访问仓库：https://gitee.com/jhaiq/dev-team-agents
+访问仓库：https://gitee.com/jhaiq/ur5-gazebo-ros2-docker
 
 ---
 
@@ -62,7 +62,7 @@ chmod 600 ~/.gitee_token
 #### 运行脚本
 
 ```bash
-cd /home/node/.openclaw/workspace/repos/dev-team-agents
+cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 ./scripts/create-gitee-repo.sh
 ```
 
@@ -80,7 +80,7 @@ cd /home/node/.openclaw/workspace/repos/dev-team-agents
 |--------|------|
 | SSH 连接 | ✅ 成功 (jhaiq) |
 | Git 配置 | ✅ 已配置 |
-| 远程仓库 | ✅ 已设置 (git@gitee.com:jhaiq/dev-team-agents.git) |
+| 远程仓库 | ✅ 已设置 (git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git) |
 | Gitee 仓库 | ⚠️ 待创建 |
 | 本地提交 | ✅ 5 commits |
 
@@ -113,9 +113,9 @@ f85ddc6 feat: 初始提交 - AI 软件开发团队部署与分析仓库
 
 ```bash
 # 1. 在浏览器打开 https://gitee.com/new
-# 2. 创建仓库 dev-team-agents
+# 2. 创建仓库 ur5-gazebo-ros2-docker
 # 3. 回到终端运行：
-cd /home/node/.openclaw/workspace/repos/dev-team-agents && git push -u origin main
+cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker && git push -u origin main
 ```
 
 ---

@@ -1,7 +1,7 @@
 # Gitee 仓库推送指南
 
 > 创建日期：2026-04-17  
-> 目标仓库：https://gitee.com/jhaiq/dev-team-agents
+> 目标仓库：https://gitee.com/jhaiq/ur5-gazebo-ros2-docker
 
 ---
 
@@ -32,7 +32,7 @@ cat ~/.ssh/id_ed25519.pub
 1. 访问：https://gitee.com/profile/sshkeys
 2. 点击「添加公钥」
 3. 粘贴 `~/.ssh/id_ed25519.pub` 内容
-4. 标题：`dev-team-agents-deploy`
+4. 标题：`ur5-gazebo-ros2-docker-deploy`
 5. 点击「确定」
 
 ---
@@ -55,7 +55,7 @@ Hi XXX! You've successfully authenticated, but GITEE.COM does not provide shell 
 ### 方法 A: 使用自动化脚本（推荐）
 
 ```bash
-cd /home/node/.openclaw/workspace/repos/dev-team-agents
+cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 ./scripts/push-to-gitee.sh
 ```
 
@@ -74,7 +74,7 @@ cd /home/node/.openclaw/workspace/repos/dev-team-agents
 
 1. 访问：https://gitee.com/new
 2. 填写信息：
-   - **仓库名**：`dev-team-agents`
+   - **仓库名**：`ur5-gazebo-ros2-docker`
    - **描述**：`AI 软件开发团队部署与分析`
    - **许可证**：`MIT`
    - **不要勾选**「使用 Readme 初始化仓库」
@@ -83,10 +83,10 @@ cd /home/node/.openclaw/workspace/repos/dev-team-agents
 #### 步骤 2: 推送代码
 
 ```bash
-cd /home/node/.openclaw/workspace/repos/dev-team-agents
+cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 
 # 设置远程仓库（如果未设置）
-git remote add origin git@gitee.com:jhaiq/dev-team-agents.git
+git remote add origin git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git
 
 # 推送
 git push -u origin main
@@ -102,7 +102,7 @@ git push -u origin main
 
 **解决**:
 1. 访问 https://gitee.com/new 创建仓库
-2. 确保仓库名正确：`dev-team-agents`
+2. 确保仓库名正确：`ur5-gazebo-ros2-docker`
 3. 重新推送
 
 ---
@@ -150,8 +150,8 @@ git push -u origin main
 ```bash
 git remote -v
 # 应显示：
-# origin  git@gitee.com:jhaiq/dev-team-agents.git (fetch)
-# origin  git@gitee.com:jhaiq/dev-team-agents.git (push)
+# origin  git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git (fetch)
+# origin  git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git (push)
 ```
 
 ### 2. 查看提交历史
@@ -162,7 +162,7 @@ git log --oneline
 
 ### 3. 访问 Gitee 仓库
 
-打开浏览器访问：https://gitee.com/jhaiq/dev-team-agents
+打开浏览器访问：https://gitee.com/jhaiq/ur5-gazebo-ros2-docker
 
 **应看到**:
 - ✅ README.md
@@ -176,11 +176,11 @@ git log --oneline
 
 | 项目 | 详情 |
 |------|------|
-| **仓库名** | dev-team-agents |
+| **仓库名** | ur5-gazebo-ros2-docker |
 | **所有者** | jhaiq |
-| **URL** | https://gitee.com/jhaiq/dev-team-agents |
-| **SSH** | git@gitee.com:jhaiq/dev-team-agents.git |
-| **HTTPS** | https://gitee.com/jhaiq/dev-team-agents.git |
+| **URL** | https://gitee.com/jhaiq/ur5-gazebo-ros2-docker |
+| **SSH** | git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git |
+| **HTTPS** | https://gitee.com/jhaiq/ur5-gazebo-ros2-docker.git |
 | **分支** | main |
 | **提交数** | 4 |
 | **文件数** | 12 |
@@ -192,7 +192,7 @@ git log --oneline
 后续更新后推送更简单：
 
 ```bash
-cd /home/node/.openclaw/workspace/repos/dev-team-agents
+cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 git add -A
 git commit -m "描述变更"
 git push

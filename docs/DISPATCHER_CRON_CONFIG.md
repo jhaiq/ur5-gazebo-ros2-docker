@@ -1,7 +1,7 @@
 # Dispatcher Cron 配置报告
 
 > 配置日期：2026-04-17  
-> 目标仓库：https://github.com/jhaiq/dev-team-agents
+> 目标仓库：https://github.com/jhaiq/ur5-gazebo-ros2-docker
 
 ---
 
@@ -38,7 +38,7 @@
 
 ### Dispatcher 脚本
 
-**位置**: `/home/node/.openclaw/workspace/repos/dev-team-agents/scripts/dispatcher-cron.sh`
+**位置**: `/home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker/scripts/dispatcher-cron.sh`
 
 **权限**: `755` (可执行)
 
@@ -117,8 +117,8 @@ PR 合并
 | 日志 | 位置 |
 |------|------|
 | **Dispatcher Cron** | `/tmp/dispatcher-cron.log` |
-| **Dev Agent** | `/tmp/agent-dev-team-agents-issue-*.log` |
-| **Review Agent** | `/tmp/agent-dev-team-agents-review-*.log` |
+| **Dev Agent** | `/tmp/agent-ur5-gazebo-ros2-docker-issue-*.log` |
+| **Review Agent** | `/tmp/agent-ur5-gazebo-ros2-docker-review-*.log` |
 
 ### 查看日志
 
@@ -127,10 +127,10 @@ PR 合并
 tail -f /tmp/dispatcher-cron.log
 
 # 查看特定 Issue 的开发日志
-tail -f /tmp/agent-dev-team-agents-issue-1.log
+tail -f /tmp/agent-ur5-gazebo-ros2-docker-issue-1.log
 
 # 查看评审日志
-tail -f /tmp/agent-dev-team-agents-review-1.log
+tail -f /tmp/agent-ur5-gazebo-ros2-docker-review-1.log
 ```
 
 ### 查看 Cron 状态
@@ -150,7 +150,7 @@ openclaw cron list | grep "Dispatcher"
 ### 1. 创建测试 Issue
 
 在 GitHub 创建 Issue:
-https://github.com/jhaiq/dev-team-agents/issues/new
+https://github.com/jhaiq/ur5-gazebo-ros2-docker/issues/new
 
 **标题**: `测试 autonomous dispatcher`
 
@@ -179,7 +179,7 @@ https://github.com/jhaiq/dev-team-agents/issues/new
 检查以下内容：
 - [ ] Issue 添加了 `in-progress` label
 - [ ] Issue 有评论：`🤖 Dispatching autonomous development...`
-- [ ] 日志文件创建：`/tmp/agent-dev-team-agents-issue-*.log`
+- [ ] 日志文件创建：`/tmp/agent-ur5-gazebo-ros2-docker-issue-*.log`
 - [ ] Dev Agent 开始工作
 
 ---
@@ -214,7 +214,7 @@ gh api user
 **查看活跃任务**:
 ```bash
 export GITHUB_TOKEN="$(cat /home/node/.github_token)"
-gh issue list --repo jhaiq/dev-team-agents --label "in-progress,reviewing"
+gh issue list --repo jhaiq/ur5-gazebo-ros2-docker --label "in-progress,reviewing"
 ```
 
 ---
@@ -263,8 +263,8 @@ openclaw cron remove 7d643419-cda7-4e72-93cf-76310eef3883
 
 | 资源 | 链接/路径 |
 |------|-----------|
-| GitHub 仓库 | https://github.com/jhaiq/dev-team-agents |
-| Gitee 仓库 | https://gitee.com/jhaiq/dev-team-agents |
+| GitHub 仓库 | https://github.com/jhaiq/ur5-gazebo-ros2-docker |
+| Gitee 仓库 | https://gitee.com/jhaiq/ur5-gazebo-ros2-docker |
 | Dispatcher 脚本 | `scripts/dispatcher-cron.sh` |
 | 日志文件 | `/tmp/dispatcher-cron.log` |
 | autonomous-dev-team | https://github.com/zxkane/autonomous-dev-team |

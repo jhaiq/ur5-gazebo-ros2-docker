@@ -14,7 +14,7 @@
 ## 📁 目录结构
 
 ```
-dev-team-agents/
+ur5-gazebo-ros2-docker/
 ├── README.md                 # 本文件
 ├── docs/
 │   ├── analysis/            # 分析报告

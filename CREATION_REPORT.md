@@ -9,8 +9,8 @@
 
 | 项目 | 详情 |
 |------|------|
-| **仓库名称** | dev-team-agents |
-| **仓库路径** | `/home/node/.openclaw/workspace/repos/dev-team-agents` |
+| **仓库名称** | ur5-gazebo-ros2-docker |
+| **仓库路径** | `/home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker` |
 | **Git 分支** | main |
 | **提交数** | 2 |
 | **文件数** | 11 |
@@ -20,7 +20,7 @@
 ## 📁 目录结构
 
 ```
-dev-team-agents/
+ur5-gazebo-ros2-docker/
 ├── README.md                           # 项目概述
 ├── .gitignore                          # Git 忽略规则
 ├── docs/
@@ -126,14 +126,14 @@ f85ddc6 feat: 初始提交 - AI 软件开发团队部署与分析仓库
 ### 方式 1: 使用脚本
 
 ```bash
-cd /home/node/.openclaw/workspace/repos/dev-team-agents
+cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 ./scripts/push-to-remote.sh <remote-url>
 ```
 
 ### 方式 2: 手动推送
 
 ```bash
-cd /home/node/.openclaw/workspace/repos/dev-team-agents
+cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 
 # 添加远程仓库
 git remote add origin <remote-url>
@@ -146,9 +146,9 @@ git push -u origin main
 
 | 平台 | 示例 |
 |------|------|
-| **Gitee** | `git@gitee.com:jhaiq/dev-team-agents.git` |
-| **GitHub** | `git@github.com:username/dev-team-agents.git` |
-| **GitLab** | `git@gitlab.com:username/dev-team-agents.git` |
+| **Gitee** | `git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git` |
+| **GitHub** | `git@github.com:username/ur5-gazebo-ros2-docker.git` |
+| **GitLab** | `git@gitlab.com:username/ur5-gazebo-ros2-docker.git` |
 
 ---
 
@@ -172,7 +172,7 @@ git push -u origin main
 3. **推送本地仓库**
 
 ```bash
-./scripts/push-to-remote.sh git@gitee.com:jhaiq/dev-team-agents.git
+./scripts/push-to-remote.sh git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git
 ```
 
 ### 本周完成
@@ -191,7 +191,7 @@ git push -u origin main
 
 | 资源 | 链接/路径 |
 |------|-----------|
-| 主仓库 | `/home/node/.openclaw/workspace/repos/dev-team-agents` |
+| 主仓库 | `/home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker` |
 | ros-dev-skill | `/home/node/.openclaw/workspace/skills/ros-dev-skill` |
 | 部署报告 | `docs/deployment/deployment-report.md` |
 | 对比分析 | `docs/analysis/solution-comparison.md` |
