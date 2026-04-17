@@ -13,6 +13,7 @@
 | **team-dev-agent** | 🟢 就绪 | 15:38 | 等待触发 |
 | **健康检查脚本** | 🟢 就绪 | 15:38 | 7 个脚本可用 |
 | **GitHub CLI** | 🟢 已安装 | 16:40 | v2.68.0 |
+| **Dispatcher Cron** | 🟢 运行中 | 16:58 | 每 5 分钟 |
 
 ---
 
@@ -80,8 +81,9 @@
 
 ### 高优先级
 - [x] 配置 GitHub Labels（autonomous-dev-team）✅ 2026-04-17
-- [ ] 设置 Dispatcher Cron
+- [x] 设置 Dispatcher Cron ✅ 2026-04-17
 - [ ] 运行首次健康检查
+- [ ] 运行首次完整工作流测试
 
 ### 中优先级
 - [ ] 配置晨间简报 Cron
