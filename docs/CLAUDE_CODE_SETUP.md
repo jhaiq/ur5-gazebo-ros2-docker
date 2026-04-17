@@ -1,128 +1,110 @@
-# Claude Code 认证配置
+# Claude Code 配置说明
 
 > 创建日期：2026-04-17  
-> 最后更新：2026-04-17 17:59
+> 最后更新：2026-04-17 18:06
 
 ---
 
-## ✅ Claude Code 已安装
+## ✅ 配置完成
 
-**版本**: 2.1.112  
-**路径**: `/home/node/.npm-global/bin/claude`
+**状态**: 已配置并验证通过
 
 ---
 
-## ⚠️ 需要认证
+## 🔐 认证配置
 
-当前状态：**未登录**
+### 令牌文件
 
-错误信息：
+- **路径**: `/home/node/.anthropic_auth_token`
+- **权限**: `600` (-rw-------)
+- **提供商**: 阿里云 DashScope
+
+### 环境变量
+
+| 变量 | 值 |
+|------|-----|
+| `ANTHROPIC_AUTH_TOKEN` | `sk-sp-db55...` (从文件读取) |
+| `ANTHROPIC_BASE_URL` | `https://coding.dashscope.aliyuncs.com/apps/anthropic` |
+| `ANTHROPIC_MODEL` | `qwen3.6-plus` |
+| `ANTHROPIC_DEFAULT_OPUS_MODEL` | `MiniMax-M2.5` |
+| `ANTHROPIC_DEFAULT_SONNET_MODEL` | `kimi-k2.5` |
+| `ANTHROPIC_DEFAULT_HAIKU_MODEL` | `glm-5` |
+
+---
+
+## 📋 autonomous.conf 配置
+
+```bash
+# === Agent Configuration ===
+AGENT_CMD="claude"
+AGENT_DEV_MODEL="qwen3.6-plus"
+AGENT_REVIEW_MODEL="kimi-k2.5"
+AGENT_PERMISSION_MODE="auto"
 ```
-Not logged in · Please run /login
-```
 
 ---
 
-## 🔐 认证方式
-
-### 方式 1: OAuth 登录（推荐）
+## 🧪 验证测试
 
 ```bash
 export PATH="/home/node/.npm-global/bin:$PATH"
-claude login
+export ANTHROPIC_AUTH_TOKEN="$(cat /home/node/.anthropic_auth_token)"
+export ANTHROPIC_BASE_URL="https://coding.dashscope.aliyuncs.com/apps/anthropic"
+
+# 测试
+claude -p "Hello, test - 你好，测试"
 ```
 
-然后按照提示完成浏览器认证。
-
-### 方式 2: API Key
-
-```bash
-# 1. 获取 API Key
-# 访问：https://console.anthropic.com/
-
-# 2. 创建密钥文件
-echo "your-api-key-here" > ~/.anthropic_api_key
-chmod 600 ~/.anthropic_api_key
-
-# 3. 设置环境变量
-echo 'export ANTHROPIC_API_KEY="$(cat ~/.anthropic_api_key)"' >> ~/.bashrc
-export ANTHROPIC_API_KEY="$(cat ~/.anthropic_api_key)"
+**预期输出**:
+```
+你好！Hello! Test received. How can I help you today?
 ```
 
 ---
 
-## 🧪 验证认证
-
-```bash
-export PATH="/home/node/.npm-global/bin:$PATH"
-
-# 测试简单命令
-claude -p "Hello, test"
-
-# 预期输出：
-# Hello! How can I help you today?
-```
-
----
-
-## 📋 完整测试流程
-
-认证后，运行以下命令测试完整流程：
+## 🔧 完整测试流程
 
 ```bash
 cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 export PATH="/home/node/.npm-global/bin:$PATH"
+export ANTHROPIC_AUTH_TOKEN="$(cat /home/node/.anthropic_auth_token)"
+export ANTHROPIC_BASE_URL="https://coding.dashscope.aliyuncs.com/apps/anthropic"
+
+# 测试 autonomous-dev.sh
 bash scripts/autonomous-dev.sh --issue 1 --mode new
 ```
 
 ---
 
-## 🔧 故障排查
+## 📊 模型配置
 
-### 问题 1: 命令未找到
-
-```bash
-# 确保 PATH 已设置
-export PATH="/home/node/.npm-global/bin:$PATH"
-which claude
-```
-
-### 问题 2: 权限错误
-
-```bash
-# 检查文件权限
-ls -la ~/.anthropic_api_key
-# 应该是：-rw------- (600)
-```
-
-### 问题 3: 网络问题
-
-```bash
-# 测试 API 连接
-curl -I https://api.anthropic.com/
-```
-
----
-
-## 📊 当前状态
-
-| 组件 | 状态 |
+| 用途 | 模型 |
 |------|------|
-| **Claude Code CLI** | ✅ 已安装 (v2.1.112) |
-| **PATH 配置** | ✅ `/home/node/.npm-global/bin` |
-| **认证状态** | ❌ 需要登录 |
-| **autonomous-dev.sh** | ✅ 脚本正常 |
-| **Dispatcher Cron** | ✅ 运行正常 |
+| **开发任务** | qwen3.6-plus |
+| **审查任务** | kimi-k2.5 |
+| **复杂任务** | MiniMax-M2.5 |
+| **简单任务** | glm-5 |
 
 ---
 
-## 🚀 下一步
+## 🔒 安全提示
 
-1. **完成认证**: `claude login`
-2. **测试流程**: 运行 `autonomous-dev.sh --issue 1 --mode new`
-3. **验证结果**: 检查 Issue #1 评论和 Labels 变化
+- ✅ 令牌文件权限：600
+- ✅ 令牌文件未加入 git
+- ✅ 环境变量从文件读取
+- ⚠️ 定期轮换令牌
 
 ---
 
-**文档创建时间**: 2026-04-17 17:59 (Asia/Shanghai)  
+## 📝 配置文件位置
+
+| 文件 | 路径 |
+|------|------|
+| **令牌文件** | `/home/node/.anthropic_auth_token` |
+| **autonomous.conf** | `/home/node/.openclaw/workspace/.agents/skills/autonomous-dispatcher/scripts/autonomous.conf` |
+| **环境变量** | `~/.bashrc` |
+
+---
+
+**配置完成时间**: 2026-04-17 18:06 (Asia/Shanghai)  
 **维护者**: 科技新闻
