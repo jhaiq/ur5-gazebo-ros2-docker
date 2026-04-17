@@ -146,7 +146,7 @@ git push -u origin main
 
 | 平台 | 示例 |
 |------|------|
-| **Gitee** | `git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git` |
+| **Gitee** | `git@gitee.com:jhaiq/dev-team-agents.git` |
 | **GitHub** | `git@github.com:username/ur5-gazebo-ros2-docker.git` |
 | **GitLab** | `git@gitlab.com:username/ur5-gazebo-ros2-docker.git` |
 
@@ -172,7 +172,7 @@ git push -u origin main
 3. **推送本地仓库**
 
 ```bash
-./scripts/push-to-remote.sh git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git
+./scripts/push-to-remote.sh git@gitee.com:jhaiq/dev-team-agents.git
 ```
 
 ### 本周完成

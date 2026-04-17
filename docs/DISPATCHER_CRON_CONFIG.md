@@ -264,7 +264,7 @@ openclaw cron remove 7d643419-cda7-4e72-93cf-76310eef3883
 | 资源 | 链接/路径 |
 |------|-----------|
 | GitHub 仓库 | https://github.com/jhaiq/ur5-gazebo-ros2-docker |
-| Gitee 仓库 | https://gitee.com/jhaiq/ur5-gazebo-ros2-docker |
+| Gitee 仓库 | https://gitee.com/jhaiq/dev-team-agents |
 | Dispatcher 脚本 | `scripts/dispatcher-cron.sh` |
 | 日志文件 | `/tmp/dispatcher-cron.log` |
 | autonomous-dev-team | https://github.com/zxkane/autonomous-dev-team |

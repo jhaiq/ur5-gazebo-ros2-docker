@@ -38,7 +38,7 @@ git push -u origin main
 
 **完成！** 🎉
 
-访问仓库：https://gitee.com/jhaiq/ur5-gazebo-ros2-docker
+访问仓库：https://gitee.com/jhaiq/dev-team-agents
 
 ---
 
@@ -80,7 +80,7 @@ cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 |--------|------|
 | SSH 连接 | ✅ 成功 (jhaiq) |
 | Git 配置 | ✅ 已配置 |
-| 远程仓库 | ✅ 已设置 (git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git) |
+| 远程仓库 | ✅ 已设置 (git@gitee.com:jhaiq/dev-team-agents.git) |
 | Gitee 仓库 | ⚠️ 待创建 |
 | 本地提交 | ✅ 5 commits |
 

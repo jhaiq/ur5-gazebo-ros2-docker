@@ -183,7 +183,7 @@ crontab -e
 | 资源 | 链接 |
 |------|------|
 | GitHub 仓库 | https://github.com/jhaiq/ur5-gazebo-ros2-docker |
-| Gitee 仓库 | https://gitee.com/jhaiq/ur5-gazebo-ros2-docker |
+| Gitee 仓库 | https://gitee.com/jhaiq/dev-team-agents |
 | autonomous-dev-team | https://github.com/zxkane/autonomous-dev-team |
 | GitHub CLI | https://cli.github.com/ |
 

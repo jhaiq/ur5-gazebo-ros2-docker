@@ -1,7 +1,7 @@
 # Gitee 仓库推送指南
 
 > 创建日期：2026-04-17  
-> 目标仓库：https://gitee.com/jhaiq/ur5-gazebo-ros2-docker
+> 目标仓库：https://gitee.com/jhaiq/dev-team-agents
 
 ---
 
@@ -86,7 +86,7 @@ cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 cd /home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker
 
 # 设置远程仓库（如果未设置）
-git remote add origin git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git
+git remote add origin git@gitee.com:jhaiq/dev-team-agents.git
 
 # 推送
 git push -u origin main
@@ -150,8 +150,8 @@ git push -u origin main
 ```bash
 git remote -v
 # 应显示：
-# origin  git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git (fetch)
-# origin  git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git (push)
+# origin  git@gitee.com:jhaiq/dev-team-agents.git (fetch)
+# origin  git@gitee.com:jhaiq/dev-team-agents.git (push)
 ```
 
 ### 2. 查看提交历史
@@ -162,7 +162,7 @@ git log --oneline
 
 ### 3. 访问 Gitee 仓库
 
-打开浏览器访问：https://gitee.com/jhaiq/ur5-gazebo-ros2-docker
+打开浏览器访问：https://gitee.com/jhaiq/dev-team-agents
 
 **应看到**:
 - ✅ README.md
@@ -178,9 +178,9 @@ git log --oneline
 |------|------|
 | **仓库名** | ur5-gazebo-ros2-docker |
 | **所有者** | jhaiq |
-| **URL** | https://gitee.com/jhaiq/ur5-gazebo-ros2-docker |
-| **SSH** | git@gitee.com:jhaiq/ur5-gazebo-ros2-docker.git |
-| **HTTPS** | https://gitee.com/jhaiq/ur5-gazebo-ros2-docker.git |
+| **URL** | https://gitee.com/jhaiq/dev-team-agents |
+| **SSH** | git@gitee.com:jhaiq/dev-team-agents.git |
+| **HTTPS** | https://gitee.com/jhaiq/dev-team-agents.git |
 | **分支** | main |
 | **提交数** | 4 |
 | **文件数** | 12 |
