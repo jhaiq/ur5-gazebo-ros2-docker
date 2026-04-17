@@ -9,9 +9,10 @@
 | 组件 | 状态 | 最后检查 | 备注 |
 |------|------|----------|------|
 | **Gateway** | 🟢 运行中 | 15:38 | PID: 15 |
-| **autonomous-dev-team** | 🟡 待配置 | - | 需设置 GitHub Labels |
+| **autonomous-dev-team** | 🟢 已配置 | 16:40 | GitHub Labels 已设置 |
 | **team-dev-agent** | 🟢 就绪 | 15:38 | 等待触发 |
 | **健康检查脚本** | 🟢 就绪 | 15:38 | 7 个脚本可用 |
+| **GitHub CLI** | 🟢 已安装 | 16:40 | v2.68.0 |
 
 ---
 
@@ -78,7 +79,7 @@
 ## 🎯 待办事项
 
 ### 高优先级
-- [ ] 配置 GitHub Labels（autonomous-dev-team）
+- [x] 配置 GitHub Labels（autonomous-dev-team）✅ 2026-04-17
 - [ ] 设置 Dispatcher Cron
 - [ ] 运行首次健康检查
 
