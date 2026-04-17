@@ -22,6 +22,7 @@ UR5 Gazebo ROS2 是一个完整的 UR5 机械臂仿真环境，基于 ROS2 和 G
 | **ros2_control** | 硬件抽象与控制器 | ✅ |
 | **Docker** | 容器化部署 | ✅ |
 | **RViz2** | 可视化与调试 | ✅ |
+| **示例代码** | 关节轨迹/Pick&Place | ✅ |
 
 ---
 
@@ -276,4 +277,17 @@ echo $DISPLAY
 
 **最后更新**: 2026-04-18  
 **维护者**: 科技新闻  
-**版本**: v0.1.0
+**版本**: v1.0.0
+
+---
+
+## 📋 完整包列表
+
+| 包名 | 描述 | 状态 |
+|------|------|------|
+| `ur5_description` | UR5 机器人 URDF/Xacro 模型 | ✅ 完成 |
+| `ur5_gazebo` | Gazebo 仿真配置和世界文件 | ✅ 完成 |
+| `ur5_moveit_config` | MoveIt2 运动规划配置 | ✅ 完成 |
+| `ur5_bringup` | 系统启动文件集合 | ✅ 完成 |
+| `ur5_control` | ros2_control 控制器配置 | ✅ 完成 |
+| `ur5_examples` | 示例代码和演示 | ✅ 完成 |
