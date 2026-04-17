@@ -5,9 +5,12 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
-PROJECT_DIR="/home/node/.openclaw/workspace/repos/dev-team-agents"
+PROJECT_DIR="/home/node/.openclaw/workspace/repos/ur5-gazebo-ros2-docker"
 DISPATCHER_SCRIPT="$HOME/.openclaw/workspace/.agents/skills/autonomous-dispatcher/scripts/dispatch-local.sh"
 CONF_FILE="$HOME/.openclaw/workspace/.agents/skills/autonomous-dispatcher/scripts/autonomous.conf"
+
+# 更新 REPO 变量（从配置文件加载）
+REPO="jhaiq/ur5-gazebo-ros2-docker"
 
 # 加载配置
 if [[ -f "$CONF_FILE" ]]; then
