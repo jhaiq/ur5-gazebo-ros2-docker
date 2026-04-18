@@ -1,5 +1,5 @@
 # UR5 Gazebo ROS2 Docker Image
-FROM ros:jazzy-ros-base
+FROM ros:humble-ros-base
 
 # Set environment
 ENV DEBIAN_FRONTEND=noninteractive
@@ -11,17 +11,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-colcon-common-extensions \
     python3-rosdep \
-    ros-jazzy-gazebo-ros-pkgs \
-    ros-jazzy-gz-ros2-control \
-    ros-jazzy-joint-state-publisher \
-    ros-jazzy-joint-trajectory-controller \
-    ros-jazzy-moveit-ros-move-group \
-    ros-jazzy-moveit-kinematics \
-    ros-jazzy-moveit-planners-ompl \
-    ros-jazzy-moveit-ros-visualization \
-    ros-jazzy-robot-state-publisher \
-    ros-jazzy-rviz2 \
-    ros-jazzy-xacro \
+    ros-humble-gazebo-ros-pkgs \
+    ros-humble-gz-ros2-control \
+    ros-humble-joint-state-publisher \
+    ros-humble-joint-trajectory-controller \
+    ros-humble-moveit-ros-move-group \
+    ros-humble-moveit-kinematics \
+    ros-humble-moveit-planners-ompl \
+    ros-humble-moveit-ros-visualization \
+    ros-humble-robot-state-publisher \
+    ros-humble-rviz2 \
+    ros-humble-xacro \
     libgl1-mesa-glx \
     libglu1-mesa \
     libxrender1 \
@@ -39,7 +39,7 @@ RUN rosdep init && \
     rosdep install --from-paths src --ignore-src -r -y
 
 # Build workspace
-RUN /bin/bash -c '. /opt/ros/jazzy/setup.bash && \
+RUN /bin/bash -c '. /opt/ros/humble/setup.bash && \
     colcon build --symlink-install && \
     rm -rf build log'
 
