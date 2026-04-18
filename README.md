@@ -291,3 +291,57 @@ echo $DISPLAY
 | `ur5_bringup` | 系统启动文件集合 | ✅ 完成 |
 | `ur5_control` | ros2_control 控制器配置 | ✅ 完成 |
 | `ur5_examples` | 示例代码和演示 | ✅ 完成 |
+
+## 📖 快速开始
+
+### 环境要求
+
+- ROS2 Humble / Jazzy
+- Docker 20.10+
+- Gazebo Sim (Garden/Ignition)
+- Ubuntu 22.04+
+
+### 安装步骤
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/jhaiq/ur5-gazebo-ros2-docker.git
+cd ur5-gazebo-ros2-docker
+
+# 2. 构建 Docker 镜像
+docker compose build
+
+# 3. 启动仿真
+docker compose up
+```
+
+### 运行示例
+
+```bash
+# 启动 UR5 Gazebo 仿真
+ros2 launch ur5_gazebo ur5_gazebo.launch.py
+
+# 启动 MoveIt2 运动规划
+ros2 launch ur5_moveit_config moveit_demo.launch.py
+
+# 运行关节轨迹控制示例
+ros2 launch ur5_examples joint_trajectory.launch.py
+```
+
+## 📂 项目结构
+
+```
+ur5_gazebo_ros2/
+├── ur5_description/      # URDF/Xacro 机器人模型
+├── ur5_gazebo/           # Gazebo 仿真配置
+├── ur5_moveit_config/    # MoveIt2 运动规划配置
+├── ur5_bringup/          # 系统启动文件
+├── ur5_control/          # ros2_control 控制器配置
+└── ur5_examples/         # 示例代码
+```
+
+## 🔗 相关链接
+
+- **Linear 项目:** https://linear.app/4384213/projects/73c5c005-b707-4fb5-b549-62280fd08a17
+- **ROS2 文档:** https://docs.ros.org/en/humble/
+- **MoveIt2 文档:** https://moveit.picknik.ai/main/
