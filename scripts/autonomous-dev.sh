@@ -1,1 +1,0 @@
-/home/node/.openclaw/workspace/.agents/skills/autonomous-dispatcher/scripts/autonomous-dev.sh
