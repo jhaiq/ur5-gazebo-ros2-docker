@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: ur5_gazebo_ros2/docker/Dockerfile
-    image: ur5-gazebo-ros2:jazzy
+    image: ur5-gazebo-ros2:humble
     container_name: ur5_gazebo
     environment:
       - DISPLAY=${DISPLAY}
@@ -25,7 +25,7 @@ services:
 
   # RViz2 Visualization
   rviz:
-    image: ur5-gazebo-ros2:jazzy
+    image: ur5-gazebo-ros2:humble
     container_name: ur5_rviz
     environment:
       - DISPLAY=${DISPLAY}
@@ -42,7 +42,7 @@ services:
 
   # MoveIt2
   moveit:
-    image: ur5-gazebo-ros2:jazzy
+    image: ur5-gazebo-ros2:humble
     container_name: ur5_moveit
     environment:
       - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
