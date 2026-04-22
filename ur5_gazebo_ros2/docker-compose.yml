@@ -4,7 +4,7 @@ services:
   # UR5 Gazebo Simulation
   gazebo:
     build:
-      context: .
+      context: ..
       dockerfile: ur5_gazebo_ros2/docker/Dockerfile
     image: ur5-gazebo-ros2:humble
     container_name: ur5_gazebo

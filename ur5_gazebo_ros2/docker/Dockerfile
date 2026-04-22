@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-colcon-common-extensions \
     python3-rosdep \
     ros-humble-gazebo-ros-pkgs \
-    ros-humble-gz-ros2-control \
+    ros-humble-gazebo-ros2-control \
     ros-humble-joint-state-publisher \
     ros-humble-joint-trajectory-controller \
     ros-humble-moveit-ros-move-group \
@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-robot-state-publisher \
     ros-humble-rviz2 \
     ros-humble-xacro \
+    ros-humble-controller-manager \
     libgl1-mesa-glx \
     libglu1-mesa \
     libxrender1 \
@@ -31,9 +32,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Create workspace
 WORKDIR /root/ur5_ws
-COPY ur5_gazebo_ros2/src /root/ur5_ws/src/
 
-# Install rosdep
+# Copy the entire ur5_gazebo_ros2 directory as the source
+COPY ur5_gazebo_ros2/ /root/ur5_ws/src/ur5_gazebo_ros2/
+
+# Copy docker scripts
+COPY ur5_gazebo_ros2/docker/ /root/ur5_ws/docker/
+
+# Install rosdep dependencies
 RUN rosdep init && \
     rosdep update && \
     rosdep install --from-paths src --ignore-src -r -y
@@ -44,7 +50,7 @@ RUN /bin/bash -c '. /opt/ros/humble/setup.bash && \
     rm -rf build log'
 
 # Setup entrypoint
-COPY docker/entrypoint.sh /entrypoint.sh
+COPY ur5_gazebo_ros2/docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Default command
