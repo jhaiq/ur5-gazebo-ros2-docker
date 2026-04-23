@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>ur5_description</name>
   <version>0.1.0</version>
@@ -14,6 +13,7 @@
   <depend>xacro</depend>
   <depend>joint_state_publisher</depend>
   <depend>robot_state_publisher</depend>
+  <depend>ign_ros2_control</depend>
   
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

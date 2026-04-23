@@ -7,9 +7,10 @@ MoveIt2 Launch File for UR5
 Launches MoveIt2 move_group node for motion planning.
 """
 
+import os
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
@@ -18,18 +19,16 @@ def launch_setup(context, *args, **kwargs):
     """Main MoveIt2 launch setup."""
     
     # Configurations
-    use_sim_time = LaunchConfiguration('use_sim_time')
+    use_sim_time = LaunchConfiguration('use_sim_time').perform(context)
     
     # Package paths
-    ur5_moveit_share = FindPackageShare('ur5_moveit_config')
-    ur5_description_share = FindPackageShare('ur5_description')
+    ur5_moveit_share = FindPackageShare('ur5_moveit_config').perform(context)
+    ur5_description_share = FindPackageShare('ur5_description').perform(context)
+    ur5_control_share = FindPackageShare('ur5_control').perform(context)
     
-    # Robot description
-    robot_description_content = PathJoinSubstitution([
-        ur5_description_share,
-        'urdf',
-        'ur5.urdf.xacro'
-    ])
+    # Robot description (process xacro)
+    xacro_path = os.path.join(ur5_description_share, 'urdf', 'ur5.urdf.xacro')
+    robot_description_content = Command(['xacro ', xacro_path])
     
     # MoveIt2 move_group node
     move_group_node = Node(
@@ -40,6 +39,7 @@ def launch_setup(context, *args, **kwargs):
         parameters=[
             # Robot description
             {'robot_description': robot_description_content},
+            {'use_sim_time': use_sim_time == 'true'},
             
             # Planning
             {'planning_scene_monitor.publish_geometry_updates': True},
@@ -47,13 +47,10 @@ def launch_setup(context, *args, **kwargs):
             {'planning_scene_monitor.publish_transforms_updates': True},
             
             # MoveIt2 configuration
-            PathJoinSubstitution([ur5_moveit_share, 'config', 'kinematics.yaml']),
-            PathJoinSubstitution([ur5_moveit_share, 'config', 'joint_limits.yaml']),
-            PathJoinSubstitution([ur5_moveit_share, 'config', 'ur5.srdf']),
-            PathJoinSubstitution([ur5_moveit_share, 'config', 'moveit_controllers.yaml']),
-            
-            # Use sim time for Gazebo
-            {'use_sim_time': use_sim_time},
+            os.path.join(ur5_moveit_share, 'config', 'kinematics.yaml'),
+            os.path.join(ur5_moveit_share, 'config', 'joint_limits.yaml'),
+            os.path.join(ur5_moveit_share, 'config', 'ur5.srdf'),
+            os.path.join(ur5_moveit_share, 'config', 'moveit_controllers.yaml'),
             
             # Planning pipeline
             {'move_group.plan_execution.max_retry_attempts': 5},

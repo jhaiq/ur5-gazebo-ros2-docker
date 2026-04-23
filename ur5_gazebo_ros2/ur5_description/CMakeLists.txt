@@ -6,7 +6,7 @@ find_package(ament_cmake REQUIRED)
 find_package(urdf REQUIRED)
 find_package(xacro REQUIRED)
 
-# Install URDF files
+# Install URDF and config files
 install(
   DIRECTORY urdf config
   DESTINATION share/${PROJECT_NAME}
